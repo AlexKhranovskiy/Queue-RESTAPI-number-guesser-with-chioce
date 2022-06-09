@@ -9,7 +9,7 @@ use App\Models\Log;
 use App\Models\Param;
 use Illuminate\Support\Facades\Bus;
 
-class HomeControllerService implements HomeControllerServiceInterface
+class ChainService implements HomeControllerServiceinterface
 {
 
     public function show($request)
@@ -23,7 +23,7 @@ class HomeControllerService implements HomeControllerServiceInterface
 
     public function start($request)
     {
-        $args = [];
+        //$args = [];
         $links = [];
 
         $args['tries'] = $request->tries ?? config('guessjob.tries');

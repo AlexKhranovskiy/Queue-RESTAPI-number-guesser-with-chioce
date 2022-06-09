@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HomeControllerServiceInterface;
+use App\Services\HomeControllerServiceinterface;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     protected $queueControllerService;
 
-    public function __construct(HomeControllerServiceInterface $queueControllerService)
+    public function __construct(HomeControllerServiceinterface $queueControllerService)
     {
         $this->queueControllerService = $queueControllerService;
     }

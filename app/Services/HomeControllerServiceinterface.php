@@ -5,7 +5,7 @@ namespace App\Services;
 
 use Illuminate\Http\Request;
 
-interface HomeControllerServiceInterface
+interface HomeControllerServiceinterface
 {
     public function show(Request $request);
     public function start(Request $request);
