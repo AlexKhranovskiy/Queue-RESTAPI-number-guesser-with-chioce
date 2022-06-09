@@ -18,8 +18,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //$this->app->bind(HomeControllerServiceinterface::class, SimpleQueueService::class);
-
         $this->app->when(ChainController::class)
             ->needs(HomeControllerServiceinterface::class)
             ->give(function () {
