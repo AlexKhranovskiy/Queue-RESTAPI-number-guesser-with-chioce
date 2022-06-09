@@ -23,7 +23,6 @@ class ChainService implements HomeControllerServiceinterface
 
     public function start($request)
     {
-        //$args = [];
         $links = [];
 
         $args['tries'] = $request->tries ?? config('guessjob.tries');

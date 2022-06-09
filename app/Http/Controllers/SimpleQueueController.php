@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Services\HomeControllerServiceinterface;
+use App\Services\SimpleQueueService;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class SimpleQueueController extends Controller
 {
     protected $queueControllerService;
 

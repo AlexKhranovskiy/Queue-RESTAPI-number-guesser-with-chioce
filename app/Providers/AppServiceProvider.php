@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\ChainController;
+use App\Http\Controllers\SimpleQueueController;
 use App\Services\ChainService;
 use App\Services\HomeControllerServiceinterface;
 use App\Services\SimpleQueueService;
@@ -16,7 +18,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(HomeControllerServiceinterface::class, SimpleQueueService::class);
+        //$this->app->bind(HomeControllerServiceinterface::class, SimpleQueueService::class);
+
+        $this->app->when(ChainController::class)
+            ->needs(HomeControllerServiceinterface::class)
+            ->give(function () {
+                return new ChainService;
+            });
+
+        $this->app->when(SimpleQueueController::class)
+            ->needs(HomeControllerServiceinterface::class)
+            ->give(function () {
+                return new SimpleQueueService;
+            });
     }
 
     /**
