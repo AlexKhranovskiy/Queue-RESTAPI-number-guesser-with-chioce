@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HomeControllerServiceinterface;
-use App\Services\SimpleQueueService;
+use App\Services\HomeControllerService;
 use Illuminate\Http\Request;
 
 class SimpleQueueController extends Controller
 {
     protected $queueControllerService;
 
-    public function __construct(HomeControllerServiceinterface $queueControllerService)
+    public function __construct(HomeControllerService $queueControllerService)
     {
         $this->queueControllerService = $queueControllerService;
     }

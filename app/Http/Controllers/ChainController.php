@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ChainService;
-use App\Services\HomeControllerServiceinterface;
+use App\Services\HomeControllerService;
 use Illuminate\Http\Request;
 
 class ChainController extends Controller
 {
     protected $queueControllerService;
 
-    public function __construct(HomeControllerServiceinterface $queueControllerService)
+    public function __construct(HomeControllerService $queueControllerService)
     {
         $this->queueControllerService = $queueControllerService;
     }
