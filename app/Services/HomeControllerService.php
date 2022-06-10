@@ -6,13 +6,12 @@ namespace App\Services;
 use App\Http\Resources\LogsResource;
 use App\Models\Log;
 use App\Models\Param;
-use Illuminate\Http\Request;
 
-abstract class HomeControllerService
+abstract class HomeControllerService implements HomeControllerServiceInterface
 {
     protected array $args;
 
-    protected function getConfigParams(Request $request)
+    public function getConfigParams($request)
     {
         $this->args['tries'] = $request->tries ?? config('guessjob.tries');
         $this->args['guessNumber'] = $request->guess_number ?? config('guessjob.guessNumber');
@@ -23,7 +22,7 @@ abstract class HomeControllerService
             ];
     }
 
-    public function show(Request $request)
+    public function show($request)
     {
         if ($request->has('transaction')) {
             return LogsResource::collection(Log::where('transaction', '=', $request->get('transaction'))->get());
@@ -57,7 +56,4 @@ abstract class HomeControllerService
 
         return $result;
     }
-
-    abstract public function start(Request $request);
-    abstract public function result();
 }
