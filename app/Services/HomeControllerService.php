@@ -30,7 +30,7 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
         return LogsResource::collection(Log::all());
     }
 
-    public function clear()
+    public static function clear()
     {
         Param::where('id', '>', 0)->delete();
         return response('Cleared', 200);
