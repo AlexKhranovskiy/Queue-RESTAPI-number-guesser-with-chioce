@@ -87,7 +87,7 @@ class ChainService implements HomeControllerServiceinterface
 
         $param->each(function ($item, $key) use (&$result, &$chainCount) {
             $chainCount++;
-            $chainLength = json_decode($item->params, true)['chainLength'];
+            $chainLength = json_decode($item->params, true)['links'];
 
             if ($chainCount === $chainLength - ($chainLength - 1)) {
                 $result[] = [

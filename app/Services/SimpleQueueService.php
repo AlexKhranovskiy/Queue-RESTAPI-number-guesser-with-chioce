@@ -29,9 +29,9 @@ class SimpleQueueService implements HomeControllerServiceinterface
                 'end' => $request->range['end'] ?? config('guessjob.rangeEnd'),
             ];
 
-        $args['links'] = $request->links ?? config('guessjob.links');
+        //$args['links'] = $request->links ?? config('guessjob.links');
 
-        GuessJob::dispatch($args)->onQueue('processing');
+        GuessJob::dispatch($args);
         if (!empty($args)) {
             $result = ' Args:';
             array_walk_recursive($args, function ($item, $key) use (&$result) {
