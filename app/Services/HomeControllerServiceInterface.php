@@ -10,11 +10,11 @@ interface HomeControllerServiceInterface
 {
     public function getConfigParams(Request $request);
 
-    public  function show(Request $request);
+    public static function show(Request $request);
 
     public static function clear();
 
-    public function total();
+    public static function total();
 
     public function start(Request $request);
 

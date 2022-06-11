@@ -22,7 +22,7 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
             ];
     }
 
-    public function show($request)
+    public static function show($request)
     {
         if ($request->has('transaction')) {
             return LogsResource::collection(Log::where('transaction', '=', $request->get('transaction'))->get());
@@ -36,7 +36,7 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
         return response('Cleared', 200);
     }
 
-    public function total()
+    public static function total()
     {
         $total = Log::all();
         $transactions = $total->pluck('transaction')->unique();
