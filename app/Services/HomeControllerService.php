@@ -56,4 +56,7 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
 
         return $result;
     }
+
+    public abstract function cancel();
+
 }

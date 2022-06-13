@@ -77,4 +77,9 @@ class ChainService extends HomeControllerService
 
         return $result;
     }
+
+    public function cancel()
+    {
+        return 'Not supported';
+    }
 }

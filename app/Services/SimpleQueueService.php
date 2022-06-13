@@ -25,4 +25,9 @@ class SimpleQueueService extends HomeControllerService
     {
         return 'Not supported';
     }
+
+    public function cancel()
+    {
+        return 'Not supported';
+    }
 }

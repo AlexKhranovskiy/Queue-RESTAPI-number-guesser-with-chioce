@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Events\StartBatchEvent;
 use App\Http\Resources\BatchLogsResource;
 use App\Jobs\GuessJob;
+use App\Jobs\GuessJobBatch;
 use App\Models\Batch;
 use App\Models\Param;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class BatchService extends HomeControllerService
         $this->args['links'] = $request->links ?? config('guessjob.links');
 
         for ($i = 1; $i <= $this->args['links']; $i++) {
-            $chain[] = new GuessJob($this->args);
+            $chain[] = new GuessJobBatch($this->args);
         }
 
         event(new StartBatchEvent($chain));
