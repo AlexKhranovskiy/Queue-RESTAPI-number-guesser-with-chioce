@@ -7,6 +7,7 @@ use App\Events\FailedJobEvent;
 use App\Events\SuccessJobEvent;
 use App\Models\Param;
 use Exception;
+use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -15,7 +16,7 @@ use Illuminate\Queue\SerializesModels;
 
 class GuessJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, Batchable;
 
     protected $args = [];
     protected int $transaction;
@@ -47,6 +48,10 @@ class GuessJob implements ShouldQueue
      */
     public function handle()
     {
+        if ($this->batch()->cancelled()) {
+            return;
+        }
+
         $this->randNumber = mt_rand
         (
             $this->args['range']['start'],
