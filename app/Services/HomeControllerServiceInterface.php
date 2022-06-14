@@ -14,7 +14,7 @@ interface HomeControllerServiceInterface
 
     public static function show(Request $request);
 
-    public static function clear();
+    public function clear();
 
     public static function total();
 

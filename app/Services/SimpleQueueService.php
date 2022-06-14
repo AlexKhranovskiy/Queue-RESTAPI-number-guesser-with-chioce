@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Jobs\GuessJob;
+use App\Models\Param;
 
 class SimpleQueueService extends HomeControllerService
 {
@@ -29,5 +30,12 @@ class SimpleQueueService extends HomeControllerService
     public function cancel()
     {
         return 'Not supported';
+    }
+
+    public function clear()
+    {
+        Param::where('id', '>', 0)->delete();
+
+        return response('Cleared', 200);
     }
 }

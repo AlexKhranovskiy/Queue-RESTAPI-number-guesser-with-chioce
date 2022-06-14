@@ -119,4 +119,531 @@ http://localhost:80/api/batch/cancel
 ```
 http://localhost:80/api/total
 ```
+## Some demonstration:
+```
+GET http://localhost:80/api/queue/start
 
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:27:50 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:27:50 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+Started, transaction = 1655198870 Args: tries = 100 guessNumber = 50 start = 0 end = 100
+
+Response code: 200 (OK); Time: 450ms; Content length: 88 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+
+```
+```
+GET http://localhost:80/api/logs
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:28:58 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:28:58 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+[
+  {
+    "id": 1,
+    "transaction": 1655193443,
+    "trial number": 37,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 2,
+    "transaction": 1655193443,
+    "trial number": 11,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 3,
+    "transaction": 1655193443,
+    "trial number": 71,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 4,
+    "transaction": 1655193443,
+    "trial number": 50,
+    "guess number": 50,
+    "status": "OK"
+  },
+  {
+    "id": 5,
+    "transaction": 1655198872,
+    "trial number": 17,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 6,
+    "transaction": 1655198872,
+    "trial number": 32,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 7,
+    "transaction": 1655198872,
+    "trial number": 63,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 8,
+    "transaction": 1655198872,
+    "trial number": 23,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 9,
+    "transaction": 1655198872,
+    "trial number": 95,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 10,
+    "transaction": 1655198872,
+    "trial number": 84,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 11,
+    "transaction": 1655198872,
+    "trial number": 64,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 12,
+    "transaction": 1655198872,
+    "trial number": 8,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 13,
+    "transaction": 1655198872,
+    "trial number": 89,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 14,
+    "transaction": 1655198872,
+    "trial number": 69,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 15,
+    "transaction": 1655198872,
+    "trial number": 45,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 16,
+    "transaction": 1655198872,
+    "trial number": 53,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 17,
+    "transaction": 1655198872,
+    "trial number": 3,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 18,
+    "transaction": 1655198872,
+    "trial number": 47,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 19,
+    "transaction": 1655198872,
+    "trial number": 96,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 20,
+    "transaction": 1655198872,
+    "trial number": 39,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 21,
+    "transaction": 1655198872,
+    "trial number": 57,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 22,
+    "transaction": 1655198872,
+    "trial number": 22,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 23,
+    "transaction": 1655198872,
+    "trial number": 1,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 24,
+    "transaction": 1655198872,
+    "trial number": 22,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 25,
+    "transaction": 1655198872,
+    "trial number": 51,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 26,
+    "transaction": 1655198872,
+    "trial number": 95,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 27,
+    "transaction": 1655198872,
+    "trial number": 22,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 28,
+    "transaction": 1655198872,
+    "trial number": 93,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 29,
+    "transaction": 1655198872,
+    "trial number": 35,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 30,
+    "transaction": 1655198872,
+    "trial number": 22,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 31,
+    "transaction": 1655198872,
+    "trial number": 91,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 32,
+    "transaction": 1655198872,
+    "trial number": 14,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 33,
+    "transaction": 1655198872,
+    "trial number": 15,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 34,
+    "transaction": 1655198872,
+    "trial number": 58,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 35,
+    "transaction": 1655198872,
+    "trial number": 60,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  {
+    "id": 36,
+    "transaction": 1655198872,
+    "trial number": 50,
+    "guess number": 50,
+    "status": "OK"
+  }
+]
+
+Response code: 200 (OK); Time: 354ms; Content length: 3185 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+```
+```
+GET http://localhost:80/api/logs/clear
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:29:51 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 58
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:29:51 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+Cleared
+
+Response code: 200 (OK); Time: 313ms; Content length: 7 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+```
+```
+ET http://localhost:80/api/total
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:31:06 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 57
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:31:06 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+[
+  {
+    "transaction": 1655199062,
+    "guess number": 50,
+    "status": "OK",
+    "used tries": 30,
+    "params": {
+      "tries": "100",
+      "guessNumber": "50",
+      "range": {
+        "start": "0",
+        "end": "100"
+      }
+    },
+    "start date": "2022-06-14 09:30:59",
+    "end date": "2022-06-14 09:31:02",
+    "completion time": "00:00:03"
+  }
+]
+
+Response code: 200 (OK); Time: 230ms; Content length: 251 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+```
+```
+GET http://localhost:80/api/chain/start?links=4
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:31:46 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 55
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:31:46 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+Started,  Args: tries = 100 guessNumber = 50 start = 0 end = 100 links = 4
+
+Response code: 200 (OK); Time: 267ms; Content length: 74 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+
+```
+```
+GET http://localhost:80/api/chain/result
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:33:31 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 56
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:33:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+[
+  {
+    "chain length": "4"
+  },
+  {
+    "transaction": 1655199224,
+    "guess number": 50,
+    "status": "OK"
+  },
+  {
+    "transaction": 1655199225,
+    "guess number": 50,
+    "status": "OK"
+  },
+  {
+    "transaction": 1655199226,
+    "guess number": 50,
+    "status": "Failed"
+  },
+  "Aborted"
+]
+
+Response code: 200 (OK); Time: 266ms; Content length: 213 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+```
+```
+GET http://localhost:80/api/batch/start?links=4
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:37:04 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 58
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:37:04 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+Started,  Args: tries = 100 guessNumber = 50 start = 0 end = 100 links = 4
+
+Response code: 200 (OK); Time: 356ms; Content length: 74 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+```
+```
+GET http://localhost:80/api/batch/result
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:35:30 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 56
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:35:30 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+[
+  {
+    "id": 1,
+    "batch_id": "968a1c8e-d7ee-4f87-a93c-ca261f8a97fa",
+    "progress": 50,
+    "jobs": 4,
+    "successed": 2,
+    "failed": 2,
+    "status": [
+      "Failed",
+      "Batch finished"
+    ]
+  }
+]
+
+Response code: 200 (OK); Time: 231ms; Content length: 145 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+```
+```
+GET http://localhost:80/api/batch/result
+
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 09:34:51 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 57
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=XgrBpMzra7cdk89aU1CRl9WlGr4DzZb9Ueotnuu6; expires=Tue, 14-Jun-2022 11:34:51 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+[
+  {
+    "id": 1,
+    "batch_id": "968a1c8e-d7ee-4f87-a93c-ca261f8a97fa",
+    "progress": 25,
+    "jobs": 4,
+    "successed": 1,
+    "failed": 0,
+    "status": "in process"
+  }
+]
+
+Response code: 200 (OK); Time: 403ms; Content length: 130 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
+
+```
+```
+
+```

@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use App\Jobs\GuessJob;
+use App\Models\Batch;
 use App\Models\Param;
 use Illuminate\Support\Facades\Bus;
 
@@ -76,6 +77,13 @@ class ChainService extends HomeControllerService
         });
 
         return $result;
+    }
+
+    public function clear()
+    {
+        Param::where('id', '>', 0)->delete();
+
+        return response('Cleared', 200);
     }
 
     public function cancel()

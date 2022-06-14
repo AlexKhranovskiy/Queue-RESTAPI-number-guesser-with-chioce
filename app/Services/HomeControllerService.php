@@ -30,12 +30,6 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
         return LogsResource::collection(Log::all());
     }
 
-    public static function clear()
-    {
-        Param::where('id', '>', 0)->delete();
-        return response('Cleared', 200);
-    }
-
     public static function total()
     {
         $total = Log::all();
@@ -56,6 +50,8 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
 
         return $result;
     }
+
+    public abstract function clear();
 
     public abstract function cancel();
 

@@ -43,7 +43,7 @@ class BatchService extends HomeControllerService
         return 'Not supported';
     }
 
-    public static function clear()
+    public function clear()
     {
         Param::where('id', '>', 0)->delete();
         Batch::where('id', '>', 0)->delete();
