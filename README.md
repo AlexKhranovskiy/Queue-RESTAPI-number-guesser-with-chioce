@@ -22,14 +22,14 @@ Having a batch id user are able to rerun the batch using artisan commands.
 Use request which starts from: http://localhost:80/api and continues in one of the options in the table.
 Request must use GET method & Accept: application/json. You can make request just from a browser.
 
-|             | Queue        | Chain         | Batch         |
-|-------------|--------------|---------------|---------------|
-| Start       | /queue/start | /chain/start  | /batch/start  |
-| See logs    | /logs        | /logs         | /logs         |
-| Clear logs  | /logs/clear  | /logs/clear   | /logs/clear   |
-| See result  |              | /chain/result | /batch/result |
-| See total   | /total       | /total        | /total        |
-| Make cancel |              |               | /batch/cancel |
+|             | Queue              | Chain               | Batch            |
+|-------------|--------------------|---------------------|------------------|
+| Start       | /queue/start       | /chain/start        | /batch/start     |
+| See logs    | /logs              | /logs               | /logs            |
+| Clear logs  | /queue/logs/clear  | /chain/logs/clear   | /batch/logs/clear|
+| See result  |                    | /chain/result       | /batch/result    |
+| See total   | /total             | /total              | /total           |
+| Make cancel |                    |                     | /batch/cancel    |
 
 * Start will begin a queue
 * Result shows a current progress or progress that have done.
@@ -645,5 +645,35 @@ Cookies are preserved between requests:
 
 ```
 ```
+GET http://localhost:80/api/batch/cancel
 
+HTTP/1.1 200 OK
+Server: nginx/1.21.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/8.0.2
+Cache-Control: no-cache, private
+Date: Tue, 14 Jun 2022 14:15:57 GMT
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 57
+Access-Control-Allow-Origin: *
+Set-Cookie: laravel_session=akCaWbhw5CLxrgpsJWfb8MC9MYASZdCEkXMsQWfA; expires=Tue, 14-Jun-2022 16:15:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+[
+  {
+    "id": 6,
+    "batch_id": "968a8116-3217-40e9-a9ef-c1f3d94588b9",
+    "progress": 0,
+    "jobs": 4,
+    "successed": 0,
+    "failed": 0,
+    "status": "canceled"
+  }
+]
+
+Response code: 200 (OK); Time: 430ms; Content length: 127 bytes
+
+Cookies are preserved between requests:
+> C:\Users\Alexander\PhpstormProjects\Queue-RESTAPI-number-guesser-with-choice\.idea\httpRequests\http-client.cookies
 ```

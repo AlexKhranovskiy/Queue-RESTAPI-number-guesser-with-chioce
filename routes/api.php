@@ -5,7 +5,6 @@ use App\Http\Controllers\BatchController;
 use App\Http\Controllers\ChainController;
 use App\Http\Controllers\SimpleQueueController;
 use App\Services\HomeControllerService;
-use App\Services\HomeControllerServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
