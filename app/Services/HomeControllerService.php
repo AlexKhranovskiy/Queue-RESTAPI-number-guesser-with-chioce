@@ -59,4 +59,5 @@ abstract class HomeControllerService implements HomeControllerServiceInterface
 
     public abstract function cancel();
 
+    public abstract function result();
 }
