@@ -85,7 +85,7 @@ http://localhost:80/api/queue/start
 http://localhost:80/api/logs
 ```
 ```
-http://localhost:80/api/logs/clear
+http://localhost:80/api/queue/logs/clear
 ```
 ```
 http://localhost:80/api/total
@@ -98,7 +98,7 @@ http://localhost:80/api/chain/start?links=4
 http://localhost:80/api/logs
 ```
 ```
-http://localhost:80/api/logs/clear
+http://localhost:80/api/chain/logs/clear
 ```
 ```
 http://localhost:80/api/chain/result
@@ -118,6 +118,9 @@ http://localhost:80/api/batch/cancel
 ```
 ```
 http://localhost:80/api/total
+```
+```
+http://localhost:80/api/batch/logs/clear
 ```
 ## Some demonstration:
 ```
