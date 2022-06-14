@@ -96,7 +96,16 @@ http://localhost:80/api/total
 http://localhost:80/api/chain/start?links=4
 ```
 ```
+http://localhost:80/api/logs
+```
+```
+http://localhost:80/api/logs/clear
+```
+```
 http://localhost:80/api/chain/result
+```
+```
+http://localhost:80/api/total
 ```
 * For batch of jobs
 ```
@@ -107,5 +116,8 @@ http://localhost:80/api/batch/result
 ```
 ```
 http://localhost:80/api/batch/cancel
+```
+```
+http://localhost:80/api/total
 ```
 
