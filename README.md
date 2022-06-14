@@ -55,28 +55,28 @@ Default settings:
     Range end = 100
     Backoff = 0
 ```
-### Possible start instructions:
-#Up the services
+## Possible start instructions:
+### Up the services
 ```
 docker-compose up --build -d
 ```
 
-#Go to the container
+### Go to the container
 ```
 docker exec -it queue-restapi-number-guesser-with-choice-app-1 bash
 ```
 
-#Run inside the container
+### Run inside the container
 ```
 php artisan migrate  
 cp .env.example .env
 ```
 
-#Down services if you are exit
+### Down services if you are exit
 ```
 docker-compose down
 ```
-#Posible endpoints:  
+### Posible endpoints:  
 * For queue
 ```
 http://localhost:80/api/queue/start
