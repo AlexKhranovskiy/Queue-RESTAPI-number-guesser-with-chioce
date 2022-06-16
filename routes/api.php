@@ -4,7 +4,7 @@
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\ChainController;
 use App\Http\Controllers\SimpleQueueController;
-use App\Services\HomeControllerService;
+use App\Services\QueueService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,9 +27,9 @@ Route::prefix('batch')->group(function () {
 });
 
 Route::get('/logs', function(Request $request){
-    return HomeControllerService::show($request);
+    return QueueService::show($request);
 });
 
 Route::get('/total', function(){
-   return HomeControllerService::total();
+   return QueueService::total();
 });

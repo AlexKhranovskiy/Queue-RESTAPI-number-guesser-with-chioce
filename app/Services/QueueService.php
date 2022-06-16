@@ -7,7 +7,7 @@ use App\Http\Resources\LogsResource;
 use App\Models\Log;
 use App\Models\Param;
 
-abstract class HomeControllerService implements HomeControllerServiceInterface
+abstract class QueueService implements QueueServiceInterface
 {
     protected array $args;
 

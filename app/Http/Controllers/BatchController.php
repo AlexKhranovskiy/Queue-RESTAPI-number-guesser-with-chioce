@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HomeControllerServiceInterface;
+use App\Services\QueueServiceInterface;
 use Illuminate\Http\Request;
 
 class BatchController extends Controller
 {
     protected $queueControllerService;
 
-    public function __construct(HomeControllerServiceInterface $queueControllerService)
+    public function __construct(QueueServiceInterface $queueControllerService)
     {
         $this->queueControllerService = $queueControllerService;
     }

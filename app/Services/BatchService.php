@@ -10,10 +10,9 @@ use App\Jobs\GuessJob;
 use App\Jobs\GuessJobBatch;
 use App\Models\Batch;
 use App\Models\Param;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Bus;
 
-class BatchService extends HomeControllerService
+class BatchService extends QueueService
 {
     public function start($request)
     {
@@ -50,27 +49,6 @@ class BatchService extends HomeControllerService
 
         return response('Cleared', 200);
     }
-
-//    public function info()
-//    {
-//        if (!empty(session('batchId'))) {
-//            $batch = Bus::findBatch(session('batchId'));
-//            if (!$batch->cancelled()) {
-//                \App\Models\Batch::updateOrCreate([
-//                    'id_batch' => $batch->id
-//                ], [
-//                    'progress' => $batch->progress(),
-//                    'jobs' => $batch->totalJobs,
-//                    'successed' => $batch->processedJobs(),
-//                    'failed' => $batch->failedJobs,
-//                    'status' => $batch->finished()
-//                ]);
-//            }
-//            return BatchLogsResource::collection(\App\Models\Batch::all());
-//        } else {
-//            return response('Session is over. Try start.', 500);
-//        }
-//    }
 
     public function cancel()
     {

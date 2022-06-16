@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Jobs\GuessJob;
 use App\Models\Param;
 
-class SimpleQueueService extends HomeControllerService
+class SimpleQueueService extends QueueService
 {
     public function start($request)
     {

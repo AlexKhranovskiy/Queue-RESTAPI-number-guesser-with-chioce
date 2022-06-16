@@ -6,7 +6,7 @@ namespace App\Services;
 
 use Illuminate\Http\Request;
 
-interface HomeControllerServiceInterface
+interface QueueServiceInterface
 {
     public function getConfigParams(Request $request);
 
@@ -14,9 +14,9 @@ interface HomeControllerServiceInterface
 
     public static function show(Request $request);
 
-    public function clear();
-
     public static function total();
+
+    public function clear();
 
     public function result();
 

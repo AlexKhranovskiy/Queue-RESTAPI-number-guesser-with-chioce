@@ -4,11 +4,10 @@
 namespace App\Services;
 
 use App\Jobs\GuessJob;
-use App\Models\Batch;
 use App\Models\Param;
 use Illuminate\Support\Facades\Bus;
 
-class ChainService extends HomeControllerService
+class ChainService extends QueueService
 {
 
     public function start($request)
