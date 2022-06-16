@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Services;
 
 use App\Http\Resources\LogsResource;
@@ -51,9 +50,9 @@ abstract class QueueService implements QueueServiceInterface
         return $result;
     }
 
-    public abstract function clear();
+    abstract public function clear();
 
-    public abstract function cancel();
+    abstract public function cancel();
 
-    public abstract function result();
+    abstract public function result();
 }

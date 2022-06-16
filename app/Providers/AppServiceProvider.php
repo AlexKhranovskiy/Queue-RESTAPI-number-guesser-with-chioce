@@ -24,19 +24,19 @@ class AppServiceProvider extends ServiceProvider
         $this->app->when(ChainController::class)
             ->needs(QueueServiceInterface::class)
             ->give(function () {
-                return new ChainService;
+                return new ChainService();
             });
 
         $this->app->when(SimpleQueueController::class)
             ->needs(QueueServiceInterface::class)
             ->give(function () {
-                return new SimpleQueueService;
+                return new SimpleQueueService();
             });
 
         $this->app->when(BatchController::class)
             ->needs(QueueServiceInterface::class)
             ->give(function () {
-                return new BatchService;
+                return new BatchService();
             });
 
         JsonResource::withoutWrapping();

@@ -15,7 +15,10 @@ use Illuminate\Queue\SerializesModels;
 
 class GuessJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     protected $args = [];
     protected int $transaction;
@@ -47,14 +50,12 @@ class GuessJob implements ShouldQueue
      */
     public function handle()
     {
-        $this->randNumber = mt_rand
-        (
+        $this->randNumber = mt_rand(
             $this->args['range']['start'],
             $this->args['range']['end']
         );
         if ($this->randNumber != $this->args['guessNumber']) {
-            event(new FailedJobEvent
-            (
+            event(new FailedJobEvent(
                 $this->randNumber,
                 $this->args['guessNumber'],
                 $this->transaction,
@@ -66,8 +67,7 @@ class GuessJob implements ShouldQueue
             ];
             throw new Exception(json_encode($message, true));
         } else {
-            event(new SuccessJobEvent
-            (
+            event(new SuccessJobEvent(
                 $this->randNumber,
                 $this->args['guessNumber'],
                 $this->transaction,

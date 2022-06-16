@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Services;
 
 use App\Jobs\GuessJob;
@@ -9,7 +8,6 @@ use Illuminate\Support\Facades\Bus;
 
 class ChainService extends QueueService
 {
-
     public function start($request)
     {
         $links = [];
@@ -70,7 +68,7 @@ class ChainService extends QueueService
                 }
             }
 
-            if($chainCount == $chainLength){
+            if ($chainCount == $chainLength) {
                 $chainCount = 0;
             }
         });

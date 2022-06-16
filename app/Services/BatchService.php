@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Services;
-
 
 use App\Events\StartBatchEvent;
 use App\Http\Resources\BatchLogsResource;
