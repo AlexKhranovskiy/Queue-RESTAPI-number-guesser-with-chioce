@@ -10,12 +10,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('queue')->group(function () {
     Route::get('/start', [SimpleQueueController::class, 'start']);
+    Route::get('/logs', [SimpleQueueController::class, 'show']);
     Route::get('/logs/clear', [SimpleQueueController::class, 'clear']);
 });
 
 Route::prefix('chain')->group(function () {
     Route::get('/start', [ChainController::class, 'start']);
     Route::get('/result', [ChainController::class, 'result']);
+    Route::get('/logs', [ChainController::class, 'show']);
     Route::get('/logs/clear', [ChainController::class, 'clear']);
 });
 
@@ -24,10 +26,6 @@ Route::prefix('batch')->group(function () {
     Route::get('/result', [BatchController::class, 'result']);
     Route::get('/cancel', [BatchController::class, 'cancel']);
     Route::get('/logs/clear', [BatchController::class, 'clear']);
-});
-
-Route::get('/logs', function(Request $request){
-    return QueueService::show($request);
 });
 
 Route::get('/total', function(){

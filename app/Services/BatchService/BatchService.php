@@ -35,10 +35,10 @@ class BatchService extends QueueService implements BatchServiceInterface
         return response('Started, ' . $result ?? '', 200);
     }
 
-    public static function show($request)
-    {
-        return 'Not supported';
-    }
+//    public static function show($request)
+//    {
+//        return 'Not supported';
+//    }
 
     public function clear()
     {

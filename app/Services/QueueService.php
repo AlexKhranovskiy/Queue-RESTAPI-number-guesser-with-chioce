@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Http\Resources\LogsResource;
 use App\Models\Log;
 use App\Models\Param;
+use Illuminate\Http\Request;
 
 abstract class QueueService implements QueueServiceInterface
 {
@@ -19,14 +20,6 @@ abstract class QueueService implements QueueServiceInterface
                 'start' => $request->range['start'] ?? config('guessjob.rangeStart'),
                 'end' => $request->range['end'] ?? config('guessjob.rangeEnd'),
             ];
-    }
-
-    public static function show($request)
-    {
-        if ($request->has('transaction')) {
-            return LogsResource::collection(Log::where('transaction', '=', $request->get('transaction'))->get());
-        }
-        return LogsResource::collection(Log::all());
     }
 
     public static function total()

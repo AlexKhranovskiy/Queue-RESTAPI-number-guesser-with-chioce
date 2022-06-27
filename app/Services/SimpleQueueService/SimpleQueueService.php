@@ -5,9 +5,17 @@ namespace App\Services\SimpleQueueService;
 use App\Jobs\GuessJob;
 use App\Models\Param;
 use App\Services\QueueService;
+use App\Traits\ShowLogsTrait;
 
-class SimpleQueueService extends QueueService
+class SimpleQueueService extends QueueService implements SimpleQueueServiceInterface
 {
+    use ShowLogsTrait;
+
+    public function show($request)
+    {
+        return $this->showLogs($request);
+    }
+
     public function start($request)
     {
         $result = '';

@@ -10,8 +10,6 @@ interface QueueServiceInterface
 
     public function start(Request $request);
 
-    public static function show(Request $request);
-
     public static function total();
 
     public function clear();
