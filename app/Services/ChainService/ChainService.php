@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\ChainService;
 
 use App\Jobs\GuessJob;
 use App\Models\Param;
+use App\Services\QueueService;
 use Illuminate\Support\Facades\Bus;
 
 class ChainService extends QueueService implements ChainServiceInterface

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\SimpleQueueService;
 
 use App\Jobs\GuessJob;
 use App\Models\Param;
+use App\Services\QueueService;
 
 class SimpleQueueService extends QueueService
 {

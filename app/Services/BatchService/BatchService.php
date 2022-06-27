@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\BatchService;
 
 use App\Events\StartBatchEvent;
 use App\Http\Resources\BatchLogsResource;
-use App\Jobs\GuessJob;
 use App\Jobs\GuessJobBatch;
 use App\Models\Batch;
 use App\Models\Param;
+use App\Services\QueueService;
 use Illuminate\Support\Facades\Bus;
 
 class BatchService extends QueueService implements BatchServiceInterface

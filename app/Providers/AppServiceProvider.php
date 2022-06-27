@@ -5,10 +5,10 @@ namespace App\Providers;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\ChainController;
 use App\Http\Controllers\SimpleQueueController;
-use App\Services\BatchService;
-use App\Services\ChainService;
+use App\Services\BatchService\BatchService;
+use App\Services\ChainService\ChainService;
 use App\Services\QueueServiceInterface;
-use App\Services\SimpleQueueService;
+use App\Services\SimpleQueueService\SimpleQueueService;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 
