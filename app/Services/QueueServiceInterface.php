@@ -15,8 +15,4 @@ interface QueueServiceInterface
     public static function total();
 
     public function clear();
-
-    public function result();
-
-    public function cancel();
 }

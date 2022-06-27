@@ -52,7 +52,5 @@ abstract class QueueService implements QueueServiceInterface
 
     abstract public function clear();
 
-    abstract public function cancel();
-
-    abstract public function result();
+    abstract public function start($request);
 }

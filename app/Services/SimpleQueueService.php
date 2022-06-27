@@ -22,16 +22,6 @@ class SimpleQueueService extends QueueService
         return response('Started, transaction = ' . time() . $result ?? '', 200);
     }
 
-    public function result()
-    {
-        return 'Not supported';
-    }
-
-    public function cancel()
-    {
-        return 'Not supported';
-    }
-
     public function clear()
     {
         Param::where('id', '>', 0)->delete();

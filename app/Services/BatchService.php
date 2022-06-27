@@ -10,7 +10,7 @@ use App\Models\Batch;
 use App\Models\Param;
 use Illuminate\Support\Facades\Bus;
 
-class BatchService extends QueueService
+class BatchService extends QueueService implements BatchServiceInterface
 {
     public function start($request)
     {

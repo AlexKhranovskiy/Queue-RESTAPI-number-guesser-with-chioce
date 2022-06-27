@@ -6,7 +6,7 @@ use App\Jobs\GuessJob;
 use App\Models\Param;
 use Illuminate\Support\Facades\Bus;
 
-class ChainService extends QueueService
+class ChainService extends QueueService implements ChainServiceInterface
 {
     public function start($request)
     {
@@ -83,8 +83,4 @@ class ChainService extends QueueService
         return response('Cleared', 200);
     }
 
-    public function cancel()
-    {
-        return 'Not supported';
-    }
 }
