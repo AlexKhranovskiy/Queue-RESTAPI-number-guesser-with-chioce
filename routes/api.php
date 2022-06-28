@@ -25,6 +25,7 @@ Route::prefix('batch')->group(function () {
     Route::get('/start', [BatchController::class, 'start']);
     Route::get('/result', [BatchController::class, 'result']);
     Route::get('/cancel', [BatchController::class, 'cancel']);
+    Route::get('/logs', [BatchController::class, 'show']);
     Route::get('/logs/clear', [BatchController::class, 'clear']);
 });
 

@@ -5,18 +5,10 @@ namespace App\Services\ChainService;
 use App\Jobs\GuessJob;
 use App\Models\Param;
 use App\Services\QueueService;
-use App\Traits\ShowLogsTrait;
 use Illuminate\Support\Facades\Bus;
 
 class ChainService extends QueueService implements ChainServiceInterface
 {
-    use ShowLogsTrait;
-
-    public function show($request)
-    {
-        return $this->showLogs($request);
-    }
-
     public function start($request)
     {
         $links = [];

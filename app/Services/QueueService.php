@@ -22,6 +22,14 @@ abstract class QueueService implements QueueServiceInterface
             ];
     }
 
+    public function show($request)
+    {
+        if ($request->has('transaction')) {
+            return LogsResource::collection(Log::where('transaction', '=', $request->get('transaction'))->get());
+        }
+        return LogsResource::collection(Log::all());
+    }
+
     public static function total()
     {
         $total = Log::all();

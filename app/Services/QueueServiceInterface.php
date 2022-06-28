@@ -8,6 +8,8 @@ interface QueueServiceInterface
 {
     public function getConfigParams(Request $request);
 
+    public function show(Request $request);
+
     public function start(Request $request);
 
     public static function total();

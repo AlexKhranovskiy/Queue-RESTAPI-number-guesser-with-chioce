@@ -14,10 +14,10 @@ class BatchController extends Controller
         $this->queueControllerService = $queueControllerService;
     }
 
-//    public function show(Request $request)
-//    {
-//        return $this->queueControllerService->show($request);
-//    }
+    public function show(Request $request)
+    {
+        return $this->queueControllerService->show($request);
+    }
 
     public function start(Request $request)
     {
