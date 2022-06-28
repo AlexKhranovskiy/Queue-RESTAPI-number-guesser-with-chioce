@@ -25,7 +25,7 @@ Request must use GET method & Accept: application/json. You can make request jus
 |             | Queue              | Chain               | Batch            |
 |-------------|--------------------|---------------------|------------------|
 | Start       | /queue/start       | /chain/start        | /batch/start     |
-| See logs    | /queue/logs        | /chain/logs         |                  |
+| See logs    | /queue/logs        | /chain/logs         | /batch/logs      |
 | Clear logs  | /queue/logs/clear  | /chain/logs/clear   | /batch/logs/clear|
 | See result  |                    | /chain/result       | /batch/result    |
 | See total   | /total             | /total              | /total           |
