@@ -35,11 +35,6 @@ class BatchService extends QueueService implements BatchServiceInterface
         return response('Started, ' . $result ?? '', 200);
     }
 
-//    public static function show($request)
-//    {
-//        return 'Not supported';
-//    }
-
     public function clear()
     {
         Param::where('id', '>', 0)->delete();

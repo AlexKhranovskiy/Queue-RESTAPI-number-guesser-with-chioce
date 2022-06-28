@@ -25,7 +25,7 @@ Request must use GET method & Accept: application/json. You can make request jus
 |             | Queue              | Chain               | Batch            |
 |-------------|--------------------|---------------------|------------------|
 | Start       | /queue/start       | /chain/start        | /batch/start     |
-| See logs    | /logs              | /logs               | /logs            |
+| See logs    | /queue/logs        | /chain/logs         |                  |
 | Clear logs  | /queue/logs/clear  | /chain/logs/clear   | /batch/logs/clear|
 | See result  |                    | /chain/result       | /batch/result    |
 | See total   | /total             | /total              | /total           |
@@ -82,7 +82,7 @@ docker-compose down
 http://localhost:80/api/queue/start
 ```
 ```
-http://localhost:80/api/logs
+http://localhost:80/api/queue/logs
 ```
 ```
 http://localhost:80/api/queue/logs/clear
@@ -95,7 +95,7 @@ http://localhost:80/api/total
 http://localhost:80/api/chain/start?links=4
 ```
 ```
-http://localhost:80/api/logs
+http://localhost:80/api/chain/logs
 ```
 ```
 http://localhost:80/api/chain/logs/clear
@@ -148,7 +148,7 @@ Cookies are preserved between requests:
 
 ```
 ```
-GET http://localhost:80/api/logs
+GET http://localhost:80/api/queue/logs
 
 HTTP/1.1 200 OK
 Server: nginx/1.21.6
