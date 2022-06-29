@@ -36,14 +36,14 @@ Request must use GET method & Accept: application/json. You can make request jus
 * Total is detailed information of finished queue's work.
 * Cancel is used for cancel the batch execution.
 
-http://localhost:80/api/start can be run with the default settings (from .env) or can receive paramaters(all or their combinations):
+http://localhost.../start can be run with the default settings (from .env) or can receive paramaters(all or their combinations):
 * links=x, x is number of jobs in queue, chain
 * tries=x, x is number of tries for all the jobs
 * guess_number=x, x is number app will try to guess in all the jobs
 * range[start]=x&range[end]=y, x and y is numbers describes start of the range and end respectively
 * backoff=x, x is time in seconds which queue waits between the jobs.
 
-http://localhost:80/api/logs can be run with option:
+http://localhost.../logs can be run with option:
 * transaction=x, where x is number of transaction you want to see.
 
 ```
