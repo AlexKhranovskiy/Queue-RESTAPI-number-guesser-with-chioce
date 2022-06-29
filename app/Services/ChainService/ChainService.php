@@ -83,5 +83,4 @@ class ChainService extends QueueService implements ChainServiceInterface
 
         return response('Cleared', 200);
     }
-
 }
